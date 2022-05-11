@@ -14,12 +14,17 @@ Bold: 700
 - Line heights
 Default: 1
 Small: 1.05
+Medium: 1.2
 Paragraph default: 1.6
+
+- Letter Spacing
+-0.5px
+0.75px
 
 --- 02 COLORS
 
 - Primary: #e67e22
-- Tints: #fdf2e9
+- Tints: #fdf2e9 #fae5d3
 - Shades: #cf711f
 - Accents: 
 - Greys: #555 #333
@@ -75,7 +80,8 @@ body {
 
 .grid {
   display: grid;
-  gap: 9.6rem;
+  column-gap: 6rem;
+  row-gap: 9.6rem;
 }
 
 .grid--2-cols {
@@ -90,13 +96,44 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.heading-primary {
-  font-size: 5.2rem;
+.grid--center-v {
+  align-items: center;
+}
+
+.heading-primary,
+.heading-secondary {
   font-weight: 700;
-  line-height: 1.05;
   color: #333;
   letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
   margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+  color: #333;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #cf711f;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
 }
 
 .btn:link,
@@ -273,6 +310,63 @@ body {
   padding: 9.6rem 0;
 }
 
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.step-img-box {
+  /* center the image horizontally and vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* since child element is using absolute */
+  position: relative;
+}
+
+/* to add circles in the background of the screen image */
+.step-img-box::before,
+.step-img-box::after {
+  content: "";
+  display: block;
+
+  /* to overlap it with the app screen image */
+  position: absolute;
+  /* to center */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+}
+
+/* to add a circle for app screen image background */
+.step-img-box::before {
+  width: 60%;
+  /* height: 60%; */
+
+  /* 60% of parent's width */
+  padding-bottom: 60%;
+  background-color: #fdf2e9;
+
+  /* to put it back of the app screen image */
+  z-index: -2;
+}
+
+/* to add another circle */
+.step-img-box::after {
+  width: 45%;
+  padding-bottom: 45%;
+  background-color: #fae5d3;
+  z-index: -1;
+}
 .step-img {
-  width: 50%;
+  width: 35%;
 }
