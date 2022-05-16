@@ -27,7 +27,10 @@ Paragraph default: 1.6
 - Tints: #fdf2e9 #fae5d3
 - Shades: #cf711f
 - Accents: 
-- Greys: #555 #333
+- Greys:
+ #6f6f6f (lightest grey allowed on #fdf2e9)
+ #555 
+ #333
 
 --- 03 SHADOWS
 
@@ -175,12 +178,38 @@ body {
   box-shadow: inset 0 0 0 3px #fff;
 }
 
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  /* to add a nicer text decoration */
+  /* curent color gives the color of current text */
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: #cf711f;
+  /* to hide the underlined */
+  border-bottom: 1px solid transparent;
+}
+
+/* ******************
+HELPER/SETTINGS CLASSES */
+
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
 
 .margin-bottom-md {
   margin-bottom: 4.8rem;
+}
+
+.center-text {
+  text-align: center;
 }
 
 strong {
@@ -427,6 +456,8 @@ strong {
   overflow: hidden;
   /* it adds padding to image as well */
   /* padding: 4.8rem; */
+  /* to add delay */
+  transition: all 0.4s;
 }
 
 .meal-content {
@@ -522,25 +553,79 @@ strong {
   font-size: 1.8rem;
 }
 
-/* .link {
-  text-decoration: none;
-} */
+/* to add hover effect on 2 meal cards */
+.meal:hover {
+  /* to move the cards to upward direction: 1st value is for horizontal direction and 2nd one is for vertical */
+  /* to move card vertically */
+  /* transform: translate(0, 2rem); */
 
-.link:link,
-.link:visited {
-  display: inline-block;
-  color: #e67e22;
-  text-decoration: none;
-  /* to add a nicer text decoration */
-  /* curent color gives the color of current text */
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 2px;
-  transition: all 0.3s;
+  /* OR */
+  /* transform: translateY(2rem); */
+
+  /* +ve value moves it to downward so putting the value -ve to move up*/
+  transform: translateY(-1.2rem);
+  /* to change the shadow on hover */
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
 }
 
-.link:hover,
-.link:active {
-  color: #cf711f;
-  /* to hide the underlined */
-  border-bottom: 1px solid transparent;
+/* ***************************** */
+/* TESTIMONIALS SECTION */
+/* ***************************** */
+
+.section-testimonials {
+  background-color: #fdf2e9;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  /* align-items: center; */
+}
+
+.testimonials-container {
+  padding: 9.6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+}
+
+.testimonial-img {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 1.6rem;
+}
+
+.gallery-item img {
+  /* to remove the white space b/w the images */
+  display: block;
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+/* to make the images scale but not outside the figure */
+.gallery-item {
+  overflow: hidden;
 }
