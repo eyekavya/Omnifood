@@ -638,6 +638,40 @@ strong {
   padding: 9.6rem 0;
 }
 
+.pricing-plan {
+  border-radius: 11px;
+
+  width: 75%;
+}
+
+.pricing-plan--starter {
+  /* to align the 1st card hosrizontally and we want it at the end due to big gap at the end */
+  justify-self: end;
+  border: 2px solid #fdf2e9;
+  padding: 4.6rem;
+}
+
+.pricing-plan--complete {
+  background-color: #fdf2e9;
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* to add a ribbon on the 2nd card */
+.pricing-plan--complete::after {
+  content: "Best Value";
+  position: absolute;
+  top: 6%;
+  right: -18%;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background-color: #ffd43b;
+  padding: 0.8rem 8rem;
+  transform: rotate(45deg);
+}
+
 .plan-header {
   text-align: center;
   margin-bottom: 4.8rem;
