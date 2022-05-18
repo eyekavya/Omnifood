@@ -109,7 +109,7 @@ body {
 }
 
 .grid--5-cols {
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
 }
 
 .grid--center-v {
@@ -754,9 +754,6 @@ strong {
 
 /* FEATURES PART */
 
-.feature {
-}
-
 .feature-icon {
   color: #e67e22;
   height: 3.2rem;
@@ -785,7 +782,7 @@ strong {
 /* ***************************** */
 
 .section-cta {
-  padding: 9.6rem 0;
+  padding: 4.8rem 0 12.8rem;
 }
 
 .cta {
@@ -864,17 +861,58 @@ strong {
 /* ***************************** */
 
 .footer {
-  padding: 9.6rem 0;
+  padding: 12.8rem 0;
+  border-top: 1px solid #eee;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  color: #767676;
+  line-height: 1.6;
+  margin-top: auto;
 }
 
 .footer-heading {
   font-size: 1.8rem;
   font-weight: 500;
-  margin-bottom: 3.2rem;
+  margin-bottom: 4rem;
+}
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.contacts p:first-child {
+  margin-bottom: 2.4rem;
 }
 
 .footer-nav {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 }
 
 .footer-link:link,
@@ -882,4 +920,10 @@ strong {
   text-decoration: none;
   font-size: 1.6rem;
   color: #767676;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
 }
