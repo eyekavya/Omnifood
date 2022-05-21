@@ -3,7 +3,7 @@ Instead, 1rem = 1em = 16px
 recommended to use em in media queries instead of rem as it causes bugs in some browser */
 
 /* ***************************** */
-/* BELOW 1344px */
+/* BELOW 1344px (SMALL LAPTOPS)*/
 /* ***************************** */
 
 /* 1344/16 = 84em */
@@ -162,8 +162,7 @@ recommended to use em in media queries instead of rem as it causes bugs in some 
     visibility: hidden;
   }
 
-  .nav-open,
-  .main-nav {
+  .nav-open .main-nav {
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
@@ -186,5 +185,45 @@ recommended to use em in media queries instead of rem as it causes bugs in some 
   .main-nav-link:link,
   .main-nav-link:visited {
     font-size: 3rem;
+  }
+}
+
+/* ***************************** */
+/* BELOW 704px (SMALLER TABLETS) */
+/* ***************************** */
+
+@media (max-width: 44em) {
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diets {
+    /* start to end */
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+
+  .pricing-plan {
+    width: 100%;
+  }
+
+  .grid--5-cols {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .logo-col,
+  .address-col {
+    grid-column: span 3;
+  }
+
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
   }
 }
