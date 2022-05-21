@@ -68,6 +68,10 @@ html {
   /* 10px/16px = 0.625 = 62.5% */
 
   overflow-x: hidden;
+
+  /* for smooth scrolling */
+  /* scroll-behavior: smooth; */
+  /* but it doesn't work on current version of safari and MS Edge */
 }
 
 /* INITIALLY BASIC STYLE TO BODY */
