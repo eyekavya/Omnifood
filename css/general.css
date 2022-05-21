@@ -66,6 +66,8 @@ html {
     Percentage of user's browser font-size setting*/
   font-size: 62.5%;
   /* 10px/16px = 0.625 = 62.5% */
+
+  overflow-x: hidden;
 }
 
 /* INITIALLY BASIC STYLE TO BODY */
@@ -74,6 +76,10 @@ body {
   line-height: 1;
   font-weight: 100;
   color: #555;
+
+  /* so that the nav overflowing out of the viewport horizontally will be hidden */
+  overflow-x: hidden;
+  /* but it only works if there is nothing absolutely positioned in relation to body */
 }
 
 /* ***************************** */
