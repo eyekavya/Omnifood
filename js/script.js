@@ -37,5 +37,34 @@ allLinks.forEach(function (link) {
     }
 
     // Close mobile navigation
+    if (link.classList.contains("main-nav-link")) {
+      headerEl.classList.toggle("nav-open");
+    }
   });
 });
+
+///////////////////////////////////////////
+// STICKY NAVIGATION
+///////////////////////////////////////////
+
+const sectionHeroEl = document.querySelector(".section-hero");
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    if (!ent.isIntersecting) {
+      document.body.classList.add("sticky");
+    }
+    if (ent.isIntersecting) {
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    //In the viewport
+    root: null,
+    // we want to get an event as soon as hero section moves out completely of the viewport
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+obs.observe(sectionHeroEl);
